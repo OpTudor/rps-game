@@ -37,10 +37,22 @@ function playRound(playerChoice, computerChoice){
                 }
             }
 }
+function getPlayerChoice()
+{
+    let playerChoice = prompt("Rock, Paper or Scissors?", )
+    if(!playerChoice ||playerChoice.toLowerCase() !== "rock" && playerChoice.toLowerCase() !== "paper" && playerChoice.toLowerCase() !== "scissors")
+    {
+        alert("Please enter rock, paper or scissors");
+        return getPlayerChoice();
+    }else{
+        return playerChoice;
+    }
+    
+}
 function game(){
     let playerScore = 0, computerScore = 0;
     while(playerScore < 5 && computerScore < 5){
-        let playerChoice = prompt("Rock, Paper or Scissors?", )
+        let playerChoice = getPlayerChoice();
         let computerChoice = getComputerChoice();
         let result = playRound(playerChoice, computerChoice);
         if(result === "You win"){
