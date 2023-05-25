@@ -49,10 +49,9 @@ function getPlayerChoice()
     }
     
 }
-function game(){
-    let playerScore = 0, computerScore = 0;
-    while(playerScore < 5 && computerScore < 5){
-        let playerChoice = getPlayerChoice();
+let playerScore = 0, computerScore = 0;
+function game(playerChoice){
+    if(playerScore < 5 && computerScore < 5){
         let computerChoice = getComputerChoice();
         let result = playRound(playerChoice, computerChoice);
         if(result === "You win"){
@@ -62,7 +61,20 @@ function game(){
         }
         console.log(result);
         console.log(`Player Score: ${playerScore} \nComputer Score: ${computerScore}`);
-    }
-    console.log(`Player Score: ${playerScore} \nComputer Score: ${computerScore}`);
+    }else{
+    console.log(`Player Score: ${playerScore} \nComputer Score: ${computerScore}`);}
 }
-game()
+
+const rockButton = document.getElementById("1");
+const paperButton = document.getElementById("2");
+const scissorsButton = document.getElementById("3");
+
+rockButton.addEventListener("click", function(){
+    game("rock");
+});
+paperButton.addEventListener("click", function(){
+    game("paper");
+});
+scissorsButton.addEventListener("click", function(){
+    game("scissors");
+});
