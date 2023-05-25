@@ -1,0 +1,48 @@
+/* roboto-regular - latin */
+@font-face {
+  font-display: swap;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  src: url("./fonts/roboto-v30-latin-regular.woff2") format("woff2");
+}
+body {
+  font-family: Roboto;
+  background-color: #e2edee;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 32px;
+  height: 15vh;
+}
+button {
+  background-color: #abbbce;
+  padding: 0;
+  border: none;
+}
+.buttons {
+  display: flex;
+  gap: 5rem;
+  margin: 5rem auto;
+}
+.result-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5rem;
+  margin: auto auto 5rem auto;
+  font-size: 18px;
+}
+.score-container {
+  display: flex;
+  gap: 5rem;
+}
+main {
+  display: flex;
+  flex-direction: column;
+}

@@ -48,6 +48,16 @@ function getPlayerChoice() {
 }
 let playerScore = 0,
   computerScore = 0;
+const score = document.getElementsByClassName("score");
+const result = document.getElementsByClassName("result");
+console.log(result);
+function updateScore(playerScore, computerScore) {
+  score[0].textContent = `You: ${playerScore}`;
+  score[1].textContent = `Computer: ${computerScore}`;
+}
+function updateResult(roundResult) {
+  result[0].textContent = `${roundResult}`;
+}
 function game(playerChoice) {
   let computerChoice = getComputerChoice();
   let result = playRound(playerChoice, computerChoice);
@@ -56,12 +66,11 @@ function game(playerChoice) {
   } else if (result === "You lose") {
     computerScore++;
   }
-  console.log(result);
-  console.log(
-    `Player Score: ${playerScore} \nComputer Score: ${computerScore}`
-  );
+  updateResult(result);
+  updateScore(playerScore, computerScore);
   if (playerScore === 5 || computerScore === 5) {
-    alert("Game over");
+    if (playerScore === 5) updateResult("The game is over, you won!");
+    if (computerScore === 5) updateResult("The game is over, you lost!");
     playerScore = 0;
     computerScore = 0;
   }
